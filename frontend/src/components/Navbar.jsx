@@ -13,14 +13,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg shadow-sm">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div className="container-fluid">
+        {/* BRAND */}
         <Link className="navbar-brand fw-bold" to="/dashboard">
           🚦 Smart Bengaluru
         </Link>
 
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav ms-auto align-items-center">
+        {/* TOGGLER (MOBILE) */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* NAV LINKS */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             {token ? (
               <>
                 <li className="nav-item">
@@ -35,7 +50,7 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-                {/* 👑 Admin Link */}
+                {/* ADMIN LINK */}
                 {user?.role === "admin" && (
                   <li className="nav-item">
                     <Link className="nav-link text-warning fw-semibold" to="/admin">
@@ -44,14 +59,15 @@ const Navbar = () => {
                   </li>
                 )}
 
-                {/* 🌙 Theme Toggle */}
-                <li className="nav-item">
+                {/* THEME TOGGLE */}
+                <li className="nav-item ms-lg-3">
                   <ThemeToggle />
                 </li>
 
-                <li className="nav-item">
+                {/* LOGOUT */}
+                <li className="nav-item ms-lg-3">
                   <button
-                    className="btn btn-danger btn-sm ms-3"
+                    className="btn btn-outline-danger btn-sm"
                     onClick={logout}
                   >
                     Logout
@@ -70,6 +86,10 @@ const Navbar = () => {
                   <Link className="nav-link" to="/register">
                     Register
                   </Link>
+                </li>
+
+                <li className="nav-item ms-lg-3">
+                  <ThemeToggle />
                 </li>
               </>
             )}
