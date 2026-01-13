@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 /* 🔥 CSS ORDER MATTERS */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
-import "./app.css"; // ✅ THIS WAS MISSING
+import "./App.css"; // ✅ THIS WAS MISSING
 import "./utils/fixLeafletIcon";
 
 /* 🌗 Initialize theme */
