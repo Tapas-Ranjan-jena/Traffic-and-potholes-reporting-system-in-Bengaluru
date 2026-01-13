@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 import "./App.css"; // ✅ THIS WAS MISSING
 import "./utils/fixLeafletIcon";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 /* 🌗 Initialize theme */
 const savedTheme = localStorage.getItem("theme") || "light";
